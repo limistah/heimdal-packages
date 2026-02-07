@@ -57,6 +57,7 @@ struct Dependencies {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[allow(dead_code)]
 struct PackageGroup {
     id: String,
     name: String,
