@@ -1,0 +1,17 @@
+id: go-dev
+name: "Go Development"
+description: "Complete Go development environment with tools"
+category: development
+
+packages:
+  required:
+    - go
+    - git
+    - make
+  optional:
+    - docker
+    - docker-compose
+
+platform_overrides:
+  linux:
+    packages: []

@@ -1,0 +1,49 @@
+# Full Package Example
+# This demonstrates all available fields for a package definition
+
+name: advanced-tool
+description: "A comprehensive example showing all available package fields"
+category: terminal
+popularity: 75
+
+# Platform-specific package names
+# Use null if not available on a platform
+platforms:
+  apt: advanced-tool          # Debian/Ubuntu
+  brew: advanced-tool         # macOS Homebrew
+  dnf: advanced-tool-core     # Fedora/RHEL (different name)
+  pacman: advanced-tool       # Arch Linux
+  mas: null                   # Mac App Store (use app ID if available)
+
+# Package dependencies
+dependencies:
+  required: []                # Packages that must be installed first
+  optional:                   # Recommended but not required
+    - package: ripgrep
+      reason: "Enhanced search functionality"
+    - package: fzf
+      reason: "Interactive fuzzy finding"
+
+# Similar tools that can replace this package
+alternatives:
+  - similar-tool
+  - alternative-tool
+
+# Complementary tools that work well with this package
+related:
+  - companion-tool
+  - helper-tool
+
+# Search tags for package discovery
+# Use lowercase, hyphens for multi-word tags
+tags:
+  - terminal
+  - productivity
+  - search
+  - cli-tool
+  - modern
+
+# Optional metadata
+website: https://example.com/advanced-tool
+license: MIT
+source: https://github.com/example/advanced-tool

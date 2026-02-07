@@ -1,0 +1,70 @@
+# Core Essential Tools - Cross-platform Package Mappings
+# Handles platform-specific package name differences for essential system tools
+
+git:
+  canonical: git
+  platforms:
+    apt: git
+    brew: git
+    dnf: git
+    pacman: git
+  aliases:
+    - git-core
+
+curl:
+  canonical: curl
+  platforms:
+    apt: curl
+    brew: curl
+    dnf: curl
+    pacman: curl
+  aliases:
+    - libcurl
+
+wget:
+  canonical: wget
+  platforms:
+    apt: wget
+    brew: wget
+    dnf: wget
+    pacman: wget
+  aliases: []
+
+make:
+  canonical: make
+  platforms:
+    apt: build-essential
+    brew: make
+    dnf: make
+    pacman: base-devel
+  aliases:
+    - gmake
+
+gcc:
+  canonical: gcc
+  platforms:
+    apt: build-essential
+    brew: gcc
+    dnf: gcc
+    pacman: base-devel
+  aliases:
+    - build-essential
+
+cmake:
+  canonical: cmake
+  platforms:
+    apt: cmake
+    brew: cmake
+    dnf: cmake
+    pacman: cmake
+  aliases: []
+
+openssl:
+  canonical: openssl
+  platforms:
+    apt: openssl
+    brew: openssl
+    dnf: openssl
+    pacman: openssl
+  aliases:
+    - libressl

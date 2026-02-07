@@ -1,0 +1,42 @@
+id: devops
+name: "DevOps Engineer"
+description: "Infrastructure management and cloud operations toolkit"
+type: devops
+
+packages:
+  essential:
+    - git
+    - curl
+    - wget
+  terminal:
+    - tmux
+    - fzf
+    - ripgrep
+    - jq
+    - htop
+  editor:
+    - vim
+  containers:
+    - docker
+    - docker-compose
+    - kubectl
+    - helm
+    - k9s
+  infrastructure:
+    - terraform
+    - ansible
+
+dotfiles:
+  - source: .gitconfig
+    target: ~/.gitconfig
+  - source: .bashrc
+    target: ~/.bashrc
+  - source: .config/k9s
+    target: ~/.config/k9s
+
+hooks:
+  post_install:
+    - command: "kubectl version --client"
+      description: "Verify kubectl installation"
+    - command: "docker --version"
+      description: "Verify Docker installation"

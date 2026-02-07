@@ -1,0 +1,42 @@
+# Text Editors - Cross-platform Package Mappings
+# Handles platform-specific differences in editor package names
+
+vim:
+  canonical: vim
+  platforms:
+    apt: vim
+    brew: vim
+    dnf: vim
+    pacman: vim
+  aliases:
+    - vi
+
+neovim:
+  canonical: neovim
+  platforms:
+    apt: neovim
+    brew: neovim
+    dnf: neovim
+    pacman: neovim
+  aliases:
+    - nvim
+
+emacs:
+  canonical: emacs
+  platforms:
+    apt: emacs
+    brew: emacs
+    dnf: emacs
+    pacman: emacs
+  aliases:
+    - gnu-emacs
+
+helix:
+  canonical: helix
+  platforms:
+    apt: null
+    brew: helix
+    dnf: null
+    pacman: helix
+  aliases:
+    - hx

@@ -1,0 +1,25 @@
+name: emacs
+description: "Extensible, customizable text editor"
+category: editor
+popularity: 75
+platforms:
+  apt: emacs
+  brew: emacs
+  dnf: emacs
+  pacman: emacs
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - vim
+  - neovim
+  - helix
+related: []
+tags:
+  - editor
+  - lisp
+  - extensible
+website: https://www.gnu.org/software/emacs/
+license: GPL-3.0
+source: https://git.savannah.gnu.org/cgit/emacs.git

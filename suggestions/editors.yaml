@@ -1,0 +1,56 @@
+patterns:
+  # Vim configuration
+  - files:
+      - .vimrc
+      - vimrc
+    suggests:
+      - package: vim
+        priority: required
+        reason: "Vim text editor"
+      - package: git
+        priority: recommended
+        reason: "Plugin management often requires git"
+
+  # Neovim configuration
+  - files:
+      - init.vim
+      - init.lua
+      - .config/nvim
+    suggests:
+      - package: neovim
+        priority: required
+        reason: "Neovim text editor"
+      - package: ripgrep
+        priority: recommended
+        reason: "Fast search for telescope and other plugins"
+      - package: fd
+        priority: recommended
+        reason: "Fast file finder for plugins"
+
+  # Emacs configuration
+  - files:
+      - .emacs
+      - .emacs.d
+      - init.el
+    suggests:
+      - package: emacs
+        priority: required
+        reason: "GNU Emacs text editor"
+      - package: ripgrep
+        priority: optional
+        reason: "Fast project-wide search"
+
+  # Helix configuration
+  - files:
+      - .config/helix
+      - config.toml
+    suggests:
+      - package: helix
+        priority: required
+        reason: "Helix text editor"
+      - package: ripgrep
+        priority: recommended
+        reason: "Content search integration"
+      - package: fd
+        priority: recommended
+        reason: "File finder integration"

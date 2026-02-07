@@ -1,0 +1,19 @@
+id: minimal
+name: "Minimal Essentials"
+description: "Bare minimum essential tools for any development environment"
+category: system
+
+packages:
+  required:
+    - git
+    - curl
+    - wget
+  optional:
+    - make
+    - vim
+
+platform_overrides:
+  linux:
+    packages: []
+  macos:
+    packages: []

@@ -1,0 +1,25 @@
+name: npm
+description: "Node.js package manager"
+category: language
+popularity: 90
+platforms:
+  apt: npm
+  brew: null
+  dnf: npm
+  pacman: npm
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - yarn
+  - pnpm
+related:
+  - node
+tags:
+  - javascript
+  - package-manager
+  - nodejs
+website: https://www.npmjs.com
+license: Artistic-2.0
+source: https://github.com/npm/cli

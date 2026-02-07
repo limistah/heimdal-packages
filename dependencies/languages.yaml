@@ -1,0 +1,44 @@
+# Language Dependencies
+# Defines package relationships for programming language runtimes
+
+python:
+  required: []
+  optional:
+    - package: pip
+      reason: "Python package installer"
+
+node:
+  required: []
+  optional:
+    - package: npm
+      reason: "Node.js package manager"
+    - package: yarn
+      reason: "Alternative package manager"
+
+rust:
+  required: []
+  optional:
+    - package: make
+      reason: "Build automation for native dependencies"
+    - package: cmake
+      reason: "Advanced build configuration"
+
+go:
+  required: []
+  optional:
+    - package: make
+      reason: "Build automation"
+    - package: git
+      reason: "Source control and module management"
+
+npm:
+  required:
+    - package: node
+      reason: "Node.js runtime required for npm"
+  optional: []
+
+pip:
+  required:
+    - package: python
+      reason: "Python runtime required for pip"
+  optional: []

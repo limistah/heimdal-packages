@@ -49,3 +49,4 @@ jsonschema = "0.17"
 
 [dev-dependencies]
 tempfile = "3.8"
+regex = "1.10"

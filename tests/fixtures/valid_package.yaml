@@ -1,0 +1,21 @@
+name: test-tool
+description: "A valid test package for testing purposes"
+category: other
+popularity: 50
+platforms:
+  apt: test-tool
+  brew: test-tool
+  dnf: null
+  pacman: null
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related: []
+tags:
+  - test
+  - valid
+website: https://example.com
+license: MIT
+source: https://github.com/example/test-tool

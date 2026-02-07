@@ -1,0 +1,29 @@
+id: macos-developer
+name: "macOS Developer Setup"
+description: "Optimized development environment for macOS with Homebrew and native tools"
+platform: macos
+recommended_for:
+  - "Software developers on macOS"
+  - "Full-stack engineers"
+  - "Mobile and web developers"
+
+profile: developer
+
+groups:
+  - web-dev
+  - terminal-power-user
+
+custom_packages:
+  - starship
+  - delta
+  - gh
+
+settings:
+  homebrew:
+    auto_update: true
+    cleanup_frequency: weekly
+  shell:
+    default: zsh
+    theme: starship
+  editor:
+    default: neovim

@@ -1,0 +1,85 @@
+# Programming Languages - Cross-platform Package Mappings
+# Handles platform-specific differences in language runtime package names
+
+python:
+  canonical: python
+  platforms:
+    apt: python3
+    brew: python
+    dnf: python3
+    pacman: python
+  aliases:
+    - python3
+    - py
+
+pip:
+  canonical: pip
+  platforms:
+    apt: python3-pip
+    brew: null
+    dnf: python3-pip
+    pacman: python-pip
+  aliases:
+    - pip3
+    - python-pip
+
+node:
+  canonical: node
+  platforms:
+    apt: nodejs
+    brew: node
+    dnf: nodejs
+    pacman: nodejs
+  aliases:
+    - nodejs
+    - node.js
+
+npm:
+  canonical: npm
+  platforms:
+    apt: npm
+    brew: null
+    dnf: npm
+    pacman: npm
+  aliases:
+    - node-package-manager
+
+go:
+  canonical: go
+  platforms:
+    apt: golang
+    brew: go
+    dnf: golang
+    pacman: go
+  aliases:
+    - golang
+
+rust:
+  canonical: rust
+  platforms:
+    apt: rustc
+    brew: rust
+    dnf: rust
+    pacman: rust
+  aliases:
+    - rustc
+    - cargo
+
+ruby:
+  canonical: ruby
+  platforms:
+    apt: ruby-full
+    brew: ruby
+    dnf: ruby
+    pacman: ruby
+  aliases:
+    - rb
+
+perl:
+  canonical: perl
+  platforms:
+    apt: perl
+    brew: perl
+    dnf: perl
+    pacman: perl
+  aliases: []

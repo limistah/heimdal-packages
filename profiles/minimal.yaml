@@ -1,0 +1,14 @@
+id: minimal
+name: "Minimal Environment"
+description: "Bare minimum essentials for any Unix-like system"
+type: minimal
+
+packages:
+  essential:
+    - git
+    - curl
+    - wget
+  terminal:
+    - bash
+  editor:
+    - vim
