@@ -352,7 +352,7 @@ Automated workflows ensure quality:
 
 ## Roadmap
 
-### v1.0.0 (Released 2026-02-07)
+### v0.1.0 (Released 2026-02-07)
 - [x] Core package definitions (42 packages)
 - [x] Validation scripts and comprehensive testing
 - [x] Compilation to binary format (Bincode)

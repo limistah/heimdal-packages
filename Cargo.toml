@@ -1,6 +1,6 @@
 [package]
 name = "heimdal-packages"
-version = "1.0.0"
+version = "0.1.0"
 edition = "2021"
 authors = ["Aleem Isiaka"]
 description = "Community-maintained package database for Heimdal"
