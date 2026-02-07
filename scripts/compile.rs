@@ -17,7 +17,7 @@ use std::fs;
 use std::path::Path;
 use walkdir::WalkDir;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Package {
     name: String,
     description: String,
@@ -31,25 +31,21 @@ struct Package {
     #[serde(default)]
     related: Vec<String>,
     tags: Vec<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
     website: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
     license: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
     source: Option<String>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Platforms {
     apt: Option<String>,
     brew: Option<String>,
     dnf: Option<String>,
     pacman: Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")]
     mas: Option<i64>,
 }
 
-#[derive(Debug, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 struct Dependencies {
     #[serde(default)]
     required: Vec<Dependency>,
@@ -57,7 +53,7 @@ struct Dependencies {
     optional: Vec<Dependency>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 struct Dependency {
     package: String,
     reason: String,
@@ -138,10 +134,23 @@ fn main() -> Result<()> {
         index_by_tag,
     };
 
-    // Serialize to bincode
+    // Serialize to bincode (using default config for simplicity)
     print!("Serializing to bincode... ");
     let encoded = bincode::serialize(&db)?;
     println!("{}", format!("✓ {} bytes", encoded.len()).green());
+
+    // Test deserialization immediately
+    print!("Testing deserialization... ");
+    let decoded: CompiledDatabase = bincode::deserialize(&encoded)?;
+    println!(
+        "{}",
+        format!(
+            "✓ {} packages, {} groups",
+            decoded.packages.len(),
+            decoded.groups.len()
+        )
+        .green()
+    );
 
     // Write to file
     fs::create_dir_all("target")?;
