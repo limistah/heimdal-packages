@@ -5,6 +5,19 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Packages](https://img.shields.io/badge/packages-42-green.svg)](#packages)
 [![Database Size](https://img.shields.io/badge/database-20KB-orange.svg)](#database)
+[![Main Repo](https://img.shields.io/badge/heimdal-main_repo-blue)](https://github.com/limistah/heimdal)
+[![Documentation](https://img.shields.io/badge/docs-wiki-green)](https://github.com/limistah/heimdal/wiki)
+
+## Integration with Heimdal
+
+This repository provides the package database that powers [Heimdal](https://github.com/limistah/heimdal)'s cross-platform package management. The main Heimdal CLI automatically downloads and uses this database to install packages across apt, brew, dnf, pacman, and mas.
+
+**Quick Links:**
+- **[Heimdal Main Repository](https://github.com/limistah/heimdal)** - Universal dotfile and configuration manager
+- **[Documentation Wiki](https://github.com/limistah/heimdal/wiki)** - User guides, CLI reference, tutorials
+- **[Package Management Guide](https://github.com/limistah/heimdal/wiki/Package-Management)** - How to use packages in Heimdal
+
+---
 
 Heimdal Packages is the centralized metadata repository for the Heimdal universal package manager. It contains structured YAML definitions for packages, groups, profiles, and cross-platform mappings that get compiled into a fast binary database format.
 
