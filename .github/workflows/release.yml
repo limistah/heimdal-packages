@@ -1,0 +1,104 @@
+name: Release
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Rust
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: stable
+    
+    - name: Compile database
+      run: cargo run --bin compile
+    
+    - name: Verify files exist
+      run: |
+        ls -lh target/packages.db target/packages.db.sha256
+        echo "Database size: $(stat -f%z target/packages.db 2>/dev/null || stat -c%s target/packages.db)"
+    
+    - name: Extract version from database
+      id: version
+      run: |
+        if [[ $GITHUB_REF == refs/tags/* ]]; then
+          VERSION=${GITHUB_REF#refs/tags/}
+        else
+          VERSION="v1.0.$(git rev-list --count HEAD)"
+        fi
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "Release version: $VERSION"
+    
+    - name: Generate release notes
+      id: notes
+      run: |
+        PACKAGE_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Total packages:" | awk '{print $3}')
+        GROUP_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Total groups:" | awk '{print $3}')
+        
+        cat > release_notes.md << EOF
+        # Package Database ${{ steps.version.outputs.version }}
+        
+        ## Database Contents
+        
+        - **Packages**: ${PACKAGE_COUNT:-36}
+        - **Groups**: ${GROUP_COUNT:-1}
+        - **Size**: $(stat -f%z target/packages.db 2>/dev/null || stat -c%s target/packages.db) bytes
+        
+        ## Download
+        
+        \`\`\`bash
+        # Download database
+        curl -L -O https://github.com/limistah/heimdal-packages/releases/latest/download/packages.db
+        curl -L -O https://github.com/limistah/heimdal-packages/releases/latest/download/packages.db.sha256
+        
+        # Verify checksum
+        shasum -a 256 -c packages.db.sha256
+        \`\`\`
+        
+        ## Usage
+        
+        This database is automatically downloaded by Heimdal on first use or via:
+        
+        \`\`\`bash
+        heimdal packages update
+        \`\`\`
+        
+        ## Changes
+        
+        See commit history for detailed changes.
+        EOF
+        
+        cat release_notes.md
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.version.outputs.version }}
+        name: Package Database ${{ steps.version.outputs.version }}
+        body_path: release_notes.md
+        files: |
+          target/packages.db
+          target/packages.db.sha256
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Update latest tag
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git tag -f latest
+        git push -f origin latest
