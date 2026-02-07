@@ -1,0 +1,24 @@
+name: pipenv
+description: "Python packaging tool with dependency management"
+category: build
+popularity: 80
+platforms:
+  apt: pipenv
+  brew: pipenv
+  dnf: pipenv
+  pacman: python-pipenv
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - poetry
+  - pip
+related:
+  - python
+tags:
+  - python
+  - package-manager
+website: https://pipenv.pypa.io/
+license: MIT
+source: https://github.com/pypa/pipenv

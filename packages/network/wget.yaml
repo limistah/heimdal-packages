@@ -1,0 +1,22 @@
+name: wget
+description: "Network downloader supporting HTTP, HTTPS, FTP"
+category: network
+popularity: 85
+platforms:
+  apt: wget
+  brew: wget
+  dnf: wget
+  pacman: wget
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - curl
+related: []
+tags:
+  - http
+  - download
+website: https://www.gnu.org/software/wget/
+license: GPL-3.0
+source: https://git.savannah.gnu.org/cgit/wget.git

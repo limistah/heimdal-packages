@@ -1,0 +1,26 @@
+name: fzf
+description: "Command-line fuzzy finder"
+category: terminal
+popularity: 94
+platforms:
+  apt: fzf
+  brew: fzf
+  dnf: fzf
+  pacman: fzf
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - skim
+related:
+  - ripgrep
+  - fd
+  - bat
+tags:
+  - fuzzy
+  - finder
+  - search
+website: https://github.com/junegunn/fzf
+license: MIT
+source: https://github.com/junegunn/fzf

@@ -1,0 +1,18 @@
+# Ignore build artifacts
+target/
+*.db
+*.sha256
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore test files
+test-output/

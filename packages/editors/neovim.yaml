@@ -1,0 +1,42 @@
+name: neovim
+description: "Hyperextensible Vim-based text editor"
+category: editor
+popularity: 90
+
+platforms:
+  apt: neovim
+  brew: neovim
+  dnf: neovim
+  pacman: neovim
+  mas: null
+
+dependencies:
+  required:
+    - package: git
+      reason: "Required for plugin management"
+  optional:
+    - package: ripgrep
+      reason: "Fast file content search"
+    - package: fzf
+      reason: "Fuzzy file finder integration"
+    - package: fd
+      reason: "Fast file name search"
+
+alternatives:
+  - vim
+  - emacs
+
+related:
+  - ripgrep
+  - fzf
+  - fd
+
+tags:
+  - editor
+  - vim
+  - terminal
+  - programming
+
+website: https://neovim.io
+license: Apache-2.0
+source: https://github.com/neovim/neovim

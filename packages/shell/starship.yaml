@@ -1,0 +1,23 @@
+name: starship
+description: "Fast, customizable shell prompt"
+category: shell
+popularity: 87
+platforms:
+  apt: null
+  brew: starship
+  dnf: starship
+  pacman: starship
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - powerlevel10k
+related:
+  - zsh
+tags:
+  - prompt
+  - shell
+website: https://starship.rs/
+license: ISC
+source: https://github.com/starship/starship

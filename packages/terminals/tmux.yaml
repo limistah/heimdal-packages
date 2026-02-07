@@ -1,0 +1,26 @@
+name: tmux
+description: "Terminal multiplexer for managing multiple terminal sessions"
+category: terminal
+popularity: 88
+platforms:
+  apt: tmux
+  brew: tmux
+  dnf: tmux
+  pacman: tmux
+  mas: null
+dependencies:
+  required: []
+  optional:
+    - package: fzf
+      reason: "Enhanced terminal navigation"
+alternatives:
+  - screen
+  - zellij
+related:
+  - fzf
+tags:
+  - terminal
+  - multiplexer
+website: https://github.com/tmux/tmux
+license: ISC
+source: https://github.com/tmux/tmux

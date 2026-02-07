@@ -1,0 +1,24 @@
+name: curl
+description: "Command-line tool for transferring data with URLs"
+category: network
+popularity: 95
+platforms:
+  apt: curl
+  brew: curl
+  dnf: curl
+  pacman: curl
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - wget
+  - httpie
+related:
+  - jq
+tags:
+  - http
+  - network
+website: https://curl.se/
+license: MIT
+source: https://github.com/curl/curl

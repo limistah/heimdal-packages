@@ -1,0 +1,27 @@
+name: ripgrep
+description: "Fast line-oriented search tool (better grep)"
+category: terminal
+popularity: 92
+platforms:
+  apt: ripgrep
+  brew: ripgrep
+  dnf: ripgrep
+  pacman: ripgrep
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - grep
+  - ag
+related:
+  - fzf
+  - bat
+  - fd
+tags:
+  - search
+  - grep
+  - fast
+website: https://github.com/BurntSushi/ripgrep
+license: MIT
+source: https://github.com/BurntSushi/ripgrep

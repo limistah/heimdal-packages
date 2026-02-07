@@ -1,0 +1,23 @@
+name: ansible
+description: "IT automation tool for configuration management"
+category: infrastructure
+popularity: 88
+platforms:
+  apt: ansible
+  brew: ansible
+  dnf: ansible
+  pacman: ansible
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - puppet
+  - chef
+related: []
+tags:
+  - automation
+  - configuration
+website: https://www.ansible.com/
+license: GPL-3.0
+source: https://github.com/ansible/ansible

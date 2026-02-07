@@ -1,0 +1,31 @@
+name: git
+description: "Distributed version control system"
+category: essential
+popularity: 100
+
+platforms:
+  apt: git
+  brew: git
+  dnf: git
+  pacman: git
+  mas: null
+
+dependencies:
+  required: []
+  optional: []
+
+alternatives: []
+
+related:
+  - gh
+  - delta
+  - lazygit
+
+tags:
+  - vcs
+  - version-control
+  - essential
+
+website: https://git-scm.com
+license: GPL-2.0
+source: https://github.com/git/git

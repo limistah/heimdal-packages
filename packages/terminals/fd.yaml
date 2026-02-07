@@ -1,0 +1,25 @@
+name: fd
+description: "Fast and user-friendly alternative to find"
+category: terminal
+popularity: 86
+platforms:
+  apt: fd-find
+  brew: fd
+  dnf: fd-find
+  pacman: fd
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - find
+related:
+  - ripgrep
+  - fzf
+tags:
+  - find
+  - search
+  - fast
+website: https://github.com/sharkdp/fd
+license: MIT
+source: https://github.com/sharkdp/fd

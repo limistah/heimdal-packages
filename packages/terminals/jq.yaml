@@ -1,0 +1,23 @@
+name: jq
+description: "Command-line JSON processor"
+category: terminal
+popularity: 90
+platforms:
+  apt: jq
+  brew: jq
+  dnf: jq
+  pacman: jq
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - yq
+related:
+  - curl
+tags:
+  - json
+  - parser
+website: https://jqlang.github.io/jq/
+license: MIT
+source: https://github.com/jqlang/jq

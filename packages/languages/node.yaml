@@ -1,0 +1,26 @@
+name: node
+description: "JavaScript runtime built on V8 engine"
+category: language
+popularity: 95
+platforms:
+  apt: nodejs
+  brew: node
+  dnf: nodejs
+  pacman: nodejs
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - bun
+  - deno
+related:
+  - yarn
+  - npm
+tags:
+  - javascript
+  - js
+  - runtime
+website: https://nodejs.org/
+license: MIT
+source: https://github.com/nodejs/node

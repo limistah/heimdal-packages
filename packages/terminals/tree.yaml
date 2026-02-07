@@ -1,0 +1,22 @@
+name: tree
+description: "Display directory tree structure"
+category: terminal
+popularity: 80
+platforms:
+  apt: tree
+  brew: tree
+  dnf: tree
+  pacman: tree
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - exa
+related: []
+tags:
+  - directory
+  - tree
+website: http://mama.indstate.edu/users/ice/tree/
+license: GPL-2.0
+source: http://mama.indstate.edu/users/ice/tree/

@@ -1,0 +1,22 @@
+name: pandoc
+description: "Universal document converter"
+category: other
+popularity: 82
+platforms:
+  apt: pandoc
+  brew: pandoc
+  dnf: pandoc
+  pacman: pandoc
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related: []
+tags:
+  - markdown
+  - converter
+  - documentation
+website: https://pandoc.org/
+license: GPL-2.0
+source: https://github.com/jgm/pandoc

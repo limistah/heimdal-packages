@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Package",
+  "description": "Package metadata definition",
+  "type": "object",
+  "required": ["name", "description", "category", "popularity", "platforms", "tags"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Package canonical name (lowercase, hyphens only)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "Short description of what the package does"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "essential",
+        "editor",
+        "terminal",
+        "language",
+        "container",
+        "infrastructure",
+        "database",
+        "network",
+        "application",
+        "shell",
+        "git",
+        "build",
+        "other"
+      ],
+      "description": "Package category"
+    },
+    "popularity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Popularity score (0-100)"
+    },
+    "platforms": {
+      "type": "object",
+      "required": ["apt", "brew", "dnf", "pacman"],
+      "properties": {
+        "apt": {
+          "type": ["string", "null"],
+          "description": "Package name on Debian/Ubuntu"
+        },
+        "brew": {
+          "type": ["string", "null"],
+          "description": "Package name on Homebrew"
+        },
+        "dnf": {
+          "type": ["string", "null"],
+          "description": "Package name on Fedora/RHEL"
+        },
+        "pacman": {
+          "type": ["string", "null"],
+          "description": "Package name on Arch Linux"
+        },
+        "mas": {
+          "type": ["integer", "null"],
+          "description": "Mac App Store ID (if available)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["package", "reason"],
+            "properties": {
+              "package": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["package", "reason"],
+            "properties": {
+              "package": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Alternative packages that can replace this"
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Related packages that work well together"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "minItems": 1,
+      "description": "Search tags (lowercase, hyphens only)"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website URL"
+    },
+    "license": {
+      "type": "string",
+      "description": "Software license (SPDX identifier preferred)"
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source code repository URL"
+    }
+  },
+  "additionalProperties": false
+}

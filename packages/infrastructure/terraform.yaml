@@ -1,0 +1,25 @@
+name: terraform
+description: "Infrastructure as code software tool"
+category: infrastructure
+popularity: 93
+platforms:
+  apt: terraform
+  brew: terraform
+  dnf: terraform
+  pacman: terraform
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - pulumi
+  - cloudformation
+related:
+  - tflint
+tags:
+  - iac
+  - infrastructure
+  - devops
+website: https://www.terraform.io/
+license: MPL-2.0
+source: https://github.com/hashicorp/terraform

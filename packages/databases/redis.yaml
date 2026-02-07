@@ -1,0 +1,23 @@
+name: redis
+description: "In-memory data structure store"
+category: database
+popularity: 89
+platforms:
+  apt: redis
+  brew: redis
+  dnf: redis
+  pacman: redis
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - memcached
+related: []
+tags:
+  - cache
+  - database
+  - nosql
+website: https://redis.io/
+license: BSD-3-Clause
+source: https://github.com/redis/redis

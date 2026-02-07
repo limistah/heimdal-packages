@@ -1,0 +1,23 @@
+id: web-dev
+name: "Web Development"
+description: "Complete web development stack with Node.js, Docker, and modern tools"
+category: development
+
+packages:
+  required:
+    - node
+    - git
+    - docker
+    - docker-compose
+  optional:
+    - yarn
+
+platform_overrides:
+  macos:
+    casks:
+      - visual-studio-code
+      - google-chrome
+      - firefox
+  linux:
+    packages:
+      - nginx

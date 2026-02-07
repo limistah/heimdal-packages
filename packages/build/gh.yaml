@@ -1,0 +1,24 @@
+name: gh
+description: "GitHub CLI for managing pull requests and issues"
+category: build
+popularity: 87
+platforms:
+  apt: gh
+  brew: gh
+  dnf: gh
+  pacman: github-cli
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - hub
+related:
+  - git
+tags:
+  - github
+  - git
+  - cli
+website: https://cli.github.com/
+license: MIT
+source: https://github.com/cli/cli

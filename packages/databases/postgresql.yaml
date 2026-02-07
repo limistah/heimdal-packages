@@ -1,0 +1,25 @@
+name: postgresql
+description: "Powerful, open-source object-relational database"
+category: database
+popularity: 91
+platforms:
+  apt: postgresql
+  brew: postgresql
+  dnf: postgresql
+  pacman: postgresql
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - mysql
+  - sqlite
+related:
+  - pgcli
+tags:
+  - database
+  - sql
+  - postgres
+website: https://www.postgresql.org/
+license: PostgreSQL
+source: https://github.com/postgres/postgres

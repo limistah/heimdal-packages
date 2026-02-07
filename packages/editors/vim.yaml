@@ -1,0 +1,23 @@
+name: vim
+description: "Highly configurable text editor"
+category: editor
+popularity: 85
+platforms:
+  apt: vim
+  brew: vim
+  dnf: vim
+  pacman: vim
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - neovim
+  - emacs
+related: []
+tags:
+  - editor
+  - terminal
+website: https://www.vim.org/
+license: Vim
+source: https://github.com/vim/vim

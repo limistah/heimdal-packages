@@ -1,0 +1,24 @@
+name: rust
+description: "Systems programming language focused on safety"
+category: language
+popularity: 90
+platforms:
+  apt: rustc
+  brew: rust
+  dnf: rust
+  pacman: rust
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - cargo
+  - rust-analyzer
+tags:
+  - rust
+  - systems
+  - programming
+website: https://www.rust-lang.org/
+license: MIT
+source: https://github.com/rust-lang/rust

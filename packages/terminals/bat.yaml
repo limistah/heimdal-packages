@@ -1,0 +1,25 @@
+name: bat
+description: "Cat clone with syntax highlighting and Git integration"
+category: terminal
+popularity: 88
+platforms:
+  apt: bat
+  brew: bat
+  dnf: bat
+  pacman: bat
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - cat
+related:
+  - ripgrep
+  - fd
+tags:
+  - cat
+  - syntax
+  - highlighting
+website: https://github.com/sharkdp/bat
+license: MIT
+source: https://github.com/sharkdp/bat

@@ -1,0 +1,22 @@
+name: helm
+description: "Kubernetes package manager"
+category: container
+popularity: 85
+platforms:
+  apt: null
+  brew: helm
+  dnf: helm
+  pacman: helm
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - kubectl
+tags:
+  - kubernetes
+  - package-manager
+website: https://helm.sh/
+license: Apache-2.0
+source: https://github.com/helm/helm

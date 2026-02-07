@@ -1,0 +1,24 @@
+name: docker
+description: "Platform for developing, shipping, and running containers"
+category: container
+popularity: 96
+platforms:
+  apt: docker.io
+  brew: docker
+  dnf: docker
+  pacman: docker
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - podman
+related:
+  - docker-compose
+  - kubectl
+tags:
+  - container
+  - devops
+website: https://www.docker.com/
+license: Apache-2.0
+source: https://github.com/docker/docker-ce

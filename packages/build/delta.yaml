@@ -1,0 +1,24 @@
+name: delta
+description: "Syntax-highlighting pager for git and diff output"
+category: build
+popularity: 82
+platforms:
+  apt: git-delta
+  brew: git-delta
+  dnf: git-delta
+  pacman: git-delta
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - diff-so-fancy
+related:
+  - git
+tags:
+  - git
+  - diff
+  - syntax
+website: https://github.com/dandavison/delta
+license: MIT
+source: https://github.com/dandavison/delta

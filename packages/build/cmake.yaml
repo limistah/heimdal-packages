@@ -1,0 +1,23 @@
+name: cmake
+description: "Cross-platform build system generator"
+category: build
+popularity: 83
+platforms:
+  apt: cmake
+  brew: cmake
+  dnf: cmake
+  pacman: cmake
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - make
+related:
+  - ninja
+tags:
+  - build
+  - c++
+website: https://cmake.org/
+license: BSD-3-Clause
+source: https://github.com/Kitware/CMake

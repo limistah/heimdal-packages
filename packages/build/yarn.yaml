@@ -1,0 +1,24 @@
+name: yarn
+description: "Fast, reliable JavaScript package manager"
+category: build
+popularity: 86
+platforms:
+  apt: yarnpkg
+  brew: yarn
+  dnf: yarnpkg
+  pacman: yarn
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - npm
+  - pnpm
+related:
+  - node
+tags:
+  - javascript
+  - package-manager
+website: https://yarnpkg.com/
+license: BSD-2-Clause
+source: https://github.com/yarnpkg/berry

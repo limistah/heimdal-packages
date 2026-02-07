@@ -1,0 +1,24 @@
+name: htop
+description: "Interactive process viewer (better top)"
+category: terminal
+popularity: 87
+platforms:
+  apt: htop
+  brew: htop
+  dnf: htop
+  pacman: htop
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - top
+  - btop
+  - glances
+related: []
+tags:
+  - monitoring
+  - processes
+website: https://htop.dev/
+license: GPL-2.0
+source: https://github.com/htop-dev/htop

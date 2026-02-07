@@ -1,0 +1,23 @@
+name: k9s
+description: "Terminal UI for managing Kubernetes clusters"
+category: container
+popularity: 83
+platforms:
+  apt: null
+  brew: k9s
+  dnf: null
+  pacman: k9s
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - kubectl
+tags:
+  - kubernetes
+  - ui
+  - terminal
+website: https://k9scli.io/
+license: Apache-2.0
+source: https://github.com/derailed/k9s

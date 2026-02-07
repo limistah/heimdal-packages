@@ -1,0 +1,22 @@
+name: docker-compose
+description: "Tool for defining and running multi-container Docker applications"
+category: container
+popularity: 92
+platforms:
+  apt: docker-compose
+  brew: docker-compose
+  dnf: docker-compose
+  pacman: docker-compose
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - docker
+tags:
+  - container
+  - orchestration
+website: https://docs.docker.com/compose/
+license: Apache-2.0
+source: https://github.com/docker/compose

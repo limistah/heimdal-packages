@@ -1,0 +1,24 @@
+name: zsh
+description: "Powerful shell with scripting support"
+category: shell
+popularity: 89
+platforms:
+  apt: zsh
+  brew: zsh
+  dnf: zsh
+  pacman: zsh
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - bash
+  - fish
+related:
+  - starship
+tags:
+  - shell
+  - terminal
+website: https://www.zsh.org/
+license: MIT
+source: https://sourceforge.net/projects/zsh/

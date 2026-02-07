@@ -1,0 +1,24 @@
+name: kubectl
+description: "Kubernetes command-line tool"
+category: container
+popularity: 90
+platforms:
+  apt: kubectl
+  brew: kubectl
+  dnf: kubernetes-client
+  pacman: kubectl
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - helm
+  - k9s
+tags:
+  - kubernetes
+  - k8s
+  - orchestration
+website: https://kubernetes.io/
+license: Apache-2.0
+source: https://github.com/kubernetes/kubernetes

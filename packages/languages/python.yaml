@@ -1,0 +1,24 @@
+name: python
+description: "Interpreted high-level programming language"
+category: language
+popularity: 98
+platforms:
+  apt: python3
+  brew: python
+  dnf: python3
+  pacman: python
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - pip
+  - pipenv
+  - pyenv
+tags:
+  - python
+  - programming
+website: https://www.python.org/
+license: PSF
+source: https://github.com/python/cpython

@@ -1,0 +1,24 @@
+name: lazygit
+description: "Simple terminal UI for git commands"
+category: build
+popularity: 84
+platforms:
+  apt: null
+  brew: lazygit
+  dnf: lazygit
+  pacman: lazygit
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - tig
+related:
+  - git
+tags:
+  - git
+  - ui
+  - terminal
+website: https://github.com/jesseduffield/lazygit
+license: MIT
+source: https://github.com/jesseduffield/lazygit

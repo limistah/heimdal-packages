@@ -1,0 +1,23 @@
+name: go
+description: "Go programming language compiler"
+category: language
+popularity: 92
+platforms:
+  apt: golang-go
+  brew: go
+  dnf: golang
+  pacman: go
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - gopls
+tags:
+  - golang
+  - go
+  - programming
+website: https://go.dev/
+license: BSD-3-Clause
+source: https://github.com/golang/go

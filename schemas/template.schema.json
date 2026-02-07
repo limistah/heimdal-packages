@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Template",
+  "description": "Profile configuration template",
+  "type": "object",
+  "required": ["id", "name", "description", "platform", "recommended_for"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique template identifier"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "description": "Human-readable template name"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "What this template provides"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["macos", "linux", "cross-platform"],
+      "description": "Target platform"
+    },
+    "recommended_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Use cases this template is good for"
+    },
+    "profile": {
+      "type": "string",
+      "description": "Base profile to extend"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Package groups to include"
+    },
+    "custom_packages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional custom packages"
+    },
+    "settings": {
+      "type": "object",
+      "description": "Template-specific settings",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

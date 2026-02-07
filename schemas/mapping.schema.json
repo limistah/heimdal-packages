@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PackageMapping",
+  "description": "Cross-platform package name mappings",
+  "type": "object",
+  "patternProperties": {
+    "^[a-z0-9-]+$": {
+      "type": "object",
+      "required": ["canonical", "platforms"],
+      "properties": {
+        "canonical": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Canonical package name used in Heimdal"
+        },
+        "platforms": {
+          "type": "object",
+          "properties": {
+            "apt": {
+              "type": ["string", "null"],
+              "description": "Package name on Debian/Ubuntu"
+            },
+            "brew": {
+              "type": ["string", "null"],
+              "description": "Package name on Homebrew"
+            },
+            "dnf": {
+              "type": ["string", "null"],
+              "description": "Package name on Fedora/RHEL"
+            },
+            "pacman": {
+              "type": ["string", "null"],
+              "description": "Package name on Arch Linux"
+            }
+          },
+          "minProperties": 2,
+          "additionalProperties": false
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-_.]+$"
+          },
+          "description": "Common name variations and aliases"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
