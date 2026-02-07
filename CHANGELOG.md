@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Infrastructure (2): ansible, terraform
   - Database (2): postgresql, redis
   - Essential (1): git
-  - Other (1): openssl
+  - Other (1): pandoc
 
 #### Package Metadata Structure
 - **5 mapping files** for cross-platform package name translations

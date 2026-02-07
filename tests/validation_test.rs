@@ -218,22 +218,16 @@ fn test_all_tags_follow_pattern() {
 #[test]
 fn test_fixtures_are_valid() {
     let valid_fixture = "tests/fixtures/valid_package.yaml";
-    if std::path::Path::new(valid_fixture).exists() {
-        let content = fs::read_to_string(valid_fixture).expect("Failed to read valid fixture");
-        let _: Package =
-            serde_yaml::from_str(&content).expect("Valid fixture should parse successfully");
-    }
+    let content = fs::read_to_string(valid_fixture)
+        .expect("Valid fixture file should exist at tests/fixtures/valid_package.yaml");
+    let _: Package =
+        serde_yaml::from_str(&content).expect("Valid fixture should parse successfully");
 }
 
 #[test]
 #[should_panic(expected = "Invalid fixture should fail to parse")]
 fn test_invalid_fixture_fails() {
     let invalid_fixture = "tests/fixtures/invalid_package.yaml";
-    if std::path::Path::new(invalid_fixture).exists() {
-        let content = fs::read_to_string(invalid_fixture).expect("Failed to read invalid fixture");
-        let _: Package =
-            serde_yaml::from_str(&content).expect("Invalid fixture should fail to parse");
-    } else {
-        panic!("Invalid fixture should fail to parse");
-    }
+    let content = fs::read_to_string(invalid_fixture).expect("Invalid fixture file is missing");
+    let _: Package = serde_yaml::from_str(&content).expect("Invalid fixture should fail to parse");
 }

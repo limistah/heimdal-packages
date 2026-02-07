@@ -293,27 +293,36 @@ fn display_stats(stats: &DatabaseStats) {
 
     // Platform coverage
     println!("{}", "Platform Coverage:".bold().white());
-    let total = stats.total_packages as f64;
-    println!(
-        "  apt:       {} packages ({:.0}%)",
-        stats.platform_coverage.apt.to_string().green(),
-        (stats.platform_coverage.apt as f64 / total) * 100.0
-    );
-    println!(
-        "  brew:      {} packages ({:.0}%)",
-        stats.platform_coverage.brew.to_string().green(),
-        (stats.platform_coverage.brew as f64 / total) * 100.0
-    );
-    println!(
-        "  dnf:       {} packages ({:.0}%)",
-        stats.platform_coverage.dnf.to_string().green(),
-        (stats.platform_coverage.dnf as f64 / total) * 100.0
-    );
-    println!(
-        "  pacman:    {} packages ({:.0}%)",
-        stats.platform_coverage.pacman.to_string().green(),
-        (stats.platform_coverage.pacman as f64 / total) * 100.0
-    );
+
+    if stats.total_packages == 0 {
+        // Avoid division by zero when there are no packages
+        println!("  apt:       0 packages (0%)");
+        println!("  brew:      0 packages (0%)");
+        println!("  dnf:       0 packages (0%)");
+        println!("  pacman:    0 packages (0%)");
+    } else {
+        let total = stats.total_packages as f64;
+        println!(
+            "  apt:       {} packages ({:.0}%)",
+            stats.platform_coverage.apt.to_string().green(),
+            (stats.platform_coverage.apt as f64 / total) * 100.0
+        );
+        println!(
+            "  brew:      {} packages ({:.0}%)",
+            stats.platform_coverage.brew.to_string().green(),
+            (stats.platform_coverage.brew as f64 / total) * 100.0
+        );
+        println!(
+            "  dnf:       {} packages ({:.0}%)",
+            stats.platform_coverage.dnf.to_string().green(),
+            (stats.platform_coverage.dnf as f64 / total) * 100.0
+        );
+        println!(
+            "  pacman:    {} packages ({:.0}%)",
+            stats.platform_coverage.pacman.to_string().green(),
+            (stats.platform_coverage.pacman as f64 / total) * 100.0
+        );
+    }
 
     println!();
 

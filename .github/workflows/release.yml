@@ -2,7 +2,6 @@ name: Release
 
 on:
   push:
-    branches: [ main ]
     tags:
       - 'v*'
 
@@ -30,30 +29,26 @@ jobs:
         ls -lh target/packages.db target/packages.db.sha256
         echo "Database size: $(stat -f%z target/packages.db 2>/dev/null || stat -c%s target/packages.db)"
     
-    - name: Extract version from database
+    - name: Extract version from tag
       id: version
       run: |
-        if [[ $GITHUB_REF == refs/tags/* ]]; then
-          VERSION=${GITHUB_REF#refs/tags/}
-        else
-          VERSION="v1.0.$(git rev-list --count HEAD)"
-        fi
+        VERSION=${GITHUB_REF#refs/tags/}
         echo "version=$VERSION" >> $GITHUB_OUTPUT
         echo "Release version: $VERSION"
     
     - name: Generate release notes
       id: notes
       run: |
-        PACKAGE_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Total packages:" | awk '{print $3}')
-        GROUP_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Total groups:" | awk '{print $3}')
+        PACKAGE_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Packages:" | awk '{print $2}')
+        GROUP_COUNT=$(cargo run --bin stats 2>/dev/null | grep "Groups:" | awk '{print $2}')
         
         cat > release_notes.md << EOF
         # Package Database ${{ steps.version.outputs.version }}
         
         ## Database Contents
         
-        - **Packages**: ${PACKAGE_COUNT:-36}
-        - **Groups**: ${GROUP_COUNT:-1}
+        - **Packages**: ${PACKAGE_COUNT:-42}
+        - **Groups**: ${GROUP_COUNT:-7}
         - **Size**: $(stat -f%z target/packages.db 2>/dev/null || stat -c%s target/packages.db) bytes
         
         ## Download
