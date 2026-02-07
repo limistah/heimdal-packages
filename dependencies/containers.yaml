@@ -1,0 +1,32 @@
+# Container Tool Dependencies
+# Defines package relationships for container and orchestration tools
+
+docker:
+  required: []
+  optional:
+    - package: docker-compose
+      reason: "Multi-container application orchestration"
+
+docker-compose:
+  required:
+    - package: docker
+      reason: "Docker runtime required for compose"
+  optional: []
+
+kubectl:
+  required: []
+  optional:
+    - package: docker
+      reason: "Local cluster development with Docker Desktop"
+
+helm:
+  required:
+    - package: kubectl
+      reason: "Kubectl required for Kubernetes package management"
+  optional: []
+
+k9s:
+  required:
+    - package: kubectl
+      reason: "Kubectl required for cluster management"
+  optional: []

@@ -1,0 +1,25 @@
+name: bash
+description: "GNU Bourne Again Shell"
+category: shell
+popularity: 95
+platforms:
+  apt: bash
+  brew: bash
+  dnf: bash
+  pacman: bash
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - zsh
+  - fish
+related:
+  - starship
+tags:
+  - shell
+  - posix
+  - scripting
+website: https://www.gnu.org/software/bash/
+license: GPL-3.0
+source: https://git.savannah.gnu.org/cgit/bash.git

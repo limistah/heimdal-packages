@@ -1,0 +1,28 @@
+id: linux-server
+name: "Linux Server Setup"
+description: "Minimal and secure server configuration for Linux systems"
+platform: linux
+recommended_for:
+  - "Server administrators"
+  - "DevOps engineers"
+  - "Backend developers"
+
+profile: minimal
+
+groups:
+  - devops
+
+custom_packages:
+  - htop
+  - tree
+  - jq
+
+settings:
+  security:
+    firewall: enabled
+    ssh_key_only: true
+  updates:
+    auto_security: true
+    frequency: daily
+  monitoring:
+    enabled: true

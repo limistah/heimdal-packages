@@ -1,0 +1,48 @@
+# Profile Example
+# Profiles define complete development environment setups
+
+id: example-profile
+name: "Example Development Profile"
+description: "Complete example profile showing all available configuration options"
+type: developer
+
+# Organized package categories
+packages:
+  essential:
+    - git
+    - curl
+    - wget
+  terminal:
+    - tmux
+    - fzf
+    - ripgrep
+  editor:
+    - neovim
+  languages:
+    - python
+    - node
+    - rust
+  containers:
+    - docker
+    - docker-compose
+
+# Dotfile mappings (optional)
+dotfiles:
+  - source: .gitconfig
+    target: ~/.gitconfig
+  - source: .config/nvim
+    target: ~/.config/nvim
+  - source: .tmux.conf
+    target: ~/.tmux.conf
+
+# Installation hooks (optional)
+hooks:
+  pre_install:
+    - command: "echo 'Starting installation...'"
+      description: "Pre-installation message"
+  
+  post_install:
+    - command: "git config --global core.editor nvim"
+      description: "Set Neovim as default git editor"
+    - command: "nvim +PlugInstall +qall"
+      description: "Install Neovim plugins"

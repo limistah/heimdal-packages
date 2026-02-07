@@ -178,7 +178,7 @@ fn validate_packages(
     for entry in WalkDir::new(dir)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| e.path().extension().map_or(false, |ext| ext == "yaml"))
+        .filter(|e| e.path().extension().is_some_and(|ext| ext == "yaml"))
     {
         let path = entry.path();
         let content = fs::read_to_string(path)
@@ -260,7 +260,7 @@ fn validate_groups(
     for entry in WalkDir::new(dir)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| e.path().extension().map_or(false, |ext| ext == "yaml"))
+        .filter(|e| e.path().extension().is_some_and(|ext| ext == "yaml"))
     {
         let path = entry.path();
         let content = fs::read_to_string(path)

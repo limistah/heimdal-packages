@@ -1,0 +1,25 @@
+name: fish
+description: "Friendly interactive shell with autosuggestions"
+category: shell
+popularity: 72
+platforms:
+  apt: fish
+  brew: fish
+  dnf: fish
+  pacman: fish
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives:
+  - zsh
+  - bash
+related:
+  - starship
+tags:
+  - shell
+  - interactive
+  - modern
+website: https://fishshell.com
+license: GPL-2.0
+source: https://github.com/fish-shell/fish-shell

@@ -1,0 +1,18 @@
+id: python-dev
+name: "Python Development"
+description: "Complete Python development stack with package management"
+category: development
+
+packages:
+  required:
+    - python
+    - pip
+    - git
+  optional:
+    - pipenv
+    - make
+
+platform_overrides:
+  linux:
+    packages:
+      - python3-dev

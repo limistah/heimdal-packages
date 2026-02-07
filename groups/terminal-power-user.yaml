@@ -1,0 +1,24 @@
+id: terminal-power-user
+name: "Terminal Power User"
+description: "Advanced terminal tools for productivity and system management"
+category: productivity
+
+packages:
+  required:
+    - tmux
+    - fzf
+    - ripgrep
+    - bat
+  optional:
+    - fd
+    - jq
+    - htop
+    - tree
+    - starship
+    - delta
+
+platform_overrides:
+  linux:
+    packages: []
+  macos:
+    packages: []

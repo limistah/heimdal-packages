@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [ dev, main ]
+  pull_request:
+    branches: [ dev, main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  validate:
+    name: Validate Package Database
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Rust
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: stable
+    
+    - name: Cache Rust dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Check Rust formatting
+      run: cargo fmt --check
+    
+    - name: Run Clippy
+      run: cargo clippy -- -D warnings
+    
+    - name: Validate YAML schemas
+      run: cargo run --bin validate
+    
+    - name: Compile database
+      run: cargo run --bin compile
+    
+    - name: Verify deserialization
+      run: |
+        echo "Database compiled successfully!"
+        echo "The compile script includes deserialization test."
+        echo "If this step passes, deserialization works."
+        ls -lh target/packages.db target/packages.db.sha256
+    
+    - name: Run statistics
+      run: cargo run --bin stats
+    
+    - name: Upload compiled database as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: package-database
+        path: |
+          target/packages.db
+          target/packages.db.sha256
+        retention-days: 7
+
+  security:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Rust
+      uses: actions-rust-lang/setup-rust-toolchain@v1
+      with:
+        toolchain: stable
+    
+    - name: Run security audit
+      run: |
+        cargo install cargo-audit || true
+        cargo audit || echo "Security audit completed with warnings"

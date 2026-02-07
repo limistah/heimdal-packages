@@ -1,0 +1,44 @@
+id: developer
+name: "General Developer"
+description: "Complete development environment for full-stack software engineering"
+type: developer
+
+packages:
+  essential:
+    - git
+    - make
+    - curl
+    - wget
+  terminal:
+    - tmux
+    - fzf
+    - ripgrep
+    - bat
+    - fd
+    - jq
+    - htop
+  editor:
+    - neovim
+  languages:
+    - python
+    - pip
+    - node
+    - npm
+    - go
+    - rust
+  containers:
+    - docker
+    - docker-compose
+
+dotfiles:
+  - source: .gitconfig
+    target: ~/.gitconfig
+  - source: .config/nvim
+    target: ~/.config/nvim
+  - source: .tmux.conf
+    target: ~/.tmux.conf
+
+hooks:
+  post_install:
+    - command: "git config --global core.editor nvim"
+      description: "Set Neovim as default git editor"

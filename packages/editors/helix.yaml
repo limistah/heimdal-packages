@@ -1,0 +1,32 @@
+name: helix
+description: "Modern modal text editor written in Rust"
+category: editor
+popularity: 68
+platforms:
+  apt: null
+  brew: helix
+  dnf: null
+  pacman: helix
+  mas: null
+dependencies:
+  required: []
+  optional:
+    - package: ripgrep
+      reason: "Fast file content search"
+    - package: fd
+      reason: "Fast file name search"
+alternatives:
+  - vim
+  - neovim
+  - emacs
+related:
+  - ripgrep
+  - fd
+tags:
+  - editor
+  - rust
+  - modern
+  - terminal
+website: https://helix-editor.com
+license: MPL-2.0
+source: https://github.com/helix-editor/helix

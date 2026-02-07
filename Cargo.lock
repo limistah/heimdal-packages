@@ -519,6 +519,7 @@ dependencies = [
  "colored",
  "glob",
  "jsonschema",
+ "regex",
  "serde",
  "serde_json",
  "serde_yaml",

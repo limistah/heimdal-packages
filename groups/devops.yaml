@@ -1,0 +1,23 @@
+id: devops
+name: "DevOps Tools"
+description: "Essential DevOps and infrastructure management tools"
+category: system
+
+packages:
+  required:
+    - git
+    - docker
+    - docker-compose
+    - kubectl
+  optional:
+    - terraform
+    - ansible
+    - helm
+    - k9s
+
+platform_overrides:
+  macos:
+    casks:
+      - docker
+  linux:
+    packages: []

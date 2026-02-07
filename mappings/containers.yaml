@@ -1,0 +1,52 @@
+# Container Tools - Cross-platform Package Mappings
+# Handles platform-specific differences in container tool package names
+
+docker:
+  canonical: docker
+  platforms:
+    apt: docker.io
+    brew: docker
+    dnf: docker
+    pacman: docker
+  aliases:
+    - docker-ce
+    - docker-engine
+
+docker-compose:
+  canonical: docker-compose
+  platforms:
+    apt: docker-compose
+    brew: docker-compose
+    dnf: docker-compose
+    pacman: docker-compose
+  aliases:
+    - compose
+
+kubectl:
+  canonical: kubectl
+  platforms:
+    apt: kubectl
+    brew: kubectl
+    dnf: kubernetes-client
+    pacman: kubectl
+  aliases:
+    - k8s
+
+helm:
+  canonical: helm
+  platforms:
+    apt: null
+    brew: helm
+    dnf: helm
+    pacman: helm
+  aliases:
+    - helm3
+
+k9s:
+  canonical: k9s
+  platforms:
+    apt: null
+    brew: k9s
+    dnf: null
+    pacman: k9s
+  aliases: []

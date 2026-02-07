@@ -1,0 +1,25 @@
+# Minimal Package Example
+# This is the absolute minimum required to define a package
+
+name: example-tool
+description: "A simple example tool"
+category: other
+popularity: 50
+
+platforms:
+  apt: example-tool
+  brew: example-tool
+  dnf: null
+  pacman: null
+  mas: null
+
+dependencies:
+  required: []
+  optional: []
+
+alternatives: []
+related: []
+
+tags:
+  - example
+  - minimal

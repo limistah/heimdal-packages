@@ -1,0 +1,57 @@
+patterns:
+  # Python projects
+  - files:
+      - requirements.txt
+      - setup.py
+      - pyproject.toml
+      - Pipfile
+    suggests:
+      - package: python
+        priority: required
+        reason: "Python runtime for project execution"
+      - package: pip
+        priority: required
+        reason: "Python package manager"
+      - package: pipenv
+        priority: optional
+        reason: "Advanced Python dependency management"
+
+  # Node.js projects
+  - files:
+      - package.json
+      - package-lock.json
+      - yarn.lock
+    suggests:
+      - package: node
+        priority: required
+        reason: "Node.js runtime for JavaScript execution"
+      - package: npm
+        priority: required
+        reason: "Node package manager"
+      - package: yarn
+        priority: optional
+        reason: "Alternative package manager with better performance"
+
+  # Go projects
+  - files:
+      - go.mod
+      - go.sum
+    suggests:
+      - package: go
+        priority: required
+        reason: "Go compiler and toolchain"
+      - package: make
+        priority: recommended
+        reason: "Build automation tool commonly used in Go projects"
+
+  # Rust projects
+  - files:
+      - Cargo.toml
+      - Cargo.lock
+    suggests:
+      - package: rust
+        priority: required
+        reason: "Rust compiler and cargo build tool"
+      - package: make
+        priority: optional
+        reason: "Additional build automation"

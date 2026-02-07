@@ -1,0 +1,22 @@
+name: pip
+description: "Python package installer"
+category: language
+popularity: 92
+platforms:
+  apt: python3-pip
+  brew: null
+  dnf: python3-pip
+  pacman: python-pip
+  mas: null
+dependencies:
+  required: []
+  optional: []
+alternatives: []
+related:
+  - python
+tags:
+  - python
+  - package-manager
+website: https://pip.pypa.io
+license: MIT
+source: https://github.com/pypa/pip

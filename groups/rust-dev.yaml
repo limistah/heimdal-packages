@@ -1,0 +1,20 @@
+id: rust-dev
+name: "Rust Development"
+description: "Complete Rust development environment with build tools and utilities"
+category: development
+
+packages:
+  required:
+    - rust
+    - git
+    - make
+  optional:
+    - cmake
+    - ripgrep
+    - fd
+    - bat
+
+platform_overrides:
+  linux:
+    packages:
+      - pkg-config

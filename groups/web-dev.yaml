@@ -6,6 +6,7 @@ category: development
 packages:
   required:
     - node
+    - npm
     - git
     - docker
     - docker-compose

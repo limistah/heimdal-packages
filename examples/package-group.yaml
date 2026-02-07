@@ -1,0 +1,29 @@
+# Package Group Example
+# Groups are curated collections of packages for specific workflows
+
+id: example-stack
+name: "Example Development Stack"
+description: "A complete example showing how to define a package group for a specific workflow"
+category: development
+
+packages:
+  required:
+    - git
+    - curl
+    - make
+  optional:
+    - ripgrep
+    - fd
+    - bat
+
+# Platform-specific overrides and additions
+platform_overrides:
+  macos:
+    packages:
+      - mas
+    casks:
+      - visual-studio-code
+      - docker
+  linux:
+    packages:
+      - build-essential

@@ -1,0 +1,44 @@
+id: backend
+name: "Backend Developer"
+description: "Server-side development with databases and containers"
+type: developer
+
+packages:
+  essential:
+    - git
+    - curl
+    - wget
+  terminal:
+    - tmux
+    - ripgrep
+    - jq
+    - htop
+  editor:
+    - neovim
+  languages:
+    - python
+    - pip
+    - node
+    - npm
+    - go
+  containers:
+    - docker
+    - docker-compose
+  databases:
+    - postgresql
+    - redis
+
+dotfiles:
+  - source: .gitconfig
+    target: ~/.gitconfig
+  - source: .config/nvim
+    target: ~/.config/nvim
+  - source: .tmux.conf
+    target: ~/.tmux.conf
+
+hooks:
+  post_install:
+    - command: "docker-compose version"
+      description: "Verify Docker Compose installation"
+    - command: "psql --version"
+      description: "Verify PostgreSQL client installation"

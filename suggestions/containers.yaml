@@ -1,0 +1,42 @@
+patterns:
+  # Docker projects
+  - files:
+      - Dockerfile
+      - docker-compose.yml
+      - docker-compose.yaml
+    suggests:
+      - package: docker
+        priority: required
+        reason: "Docker engine for building and running containers"
+      - package: docker-compose
+        priority: recommended
+        reason: "Multi-container orchestration tool"
+
+  # Kubernetes projects
+  - files:
+      - k8s/*.yaml
+      - kubernetes/*.yaml
+      - deployment.yaml
+      - service.yaml
+    suggests:
+      - package: kubectl
+        priority: required
+        reason: "Kubernetes command-line tool"
+      - package: k9s
+        priority: optional
+        reason: "Terminal UI for Kubernetes cluster management"
+      - package: helm
+        priority: optional
+        reason: "Kubernetes package manager"
+
+  # Helm charts
+  - files:
+      - Chart.yaml
+      - values.yaml
+    suggests:
+      - package: helm
+        priority: required
+        reason: "Helm package manager for Kubernetes"
+      - package: kubectl
+        priority: required
+        reason: "Kubernetes CLI required for Helm"

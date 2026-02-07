@@ -1,0 +1,9 @@
+name: invalid_tool
+description: "Short"
+category: invalid-category
+popularity: "not a number"
+platforms:
+  - this should be a map not a list
+tags:
+  - Invalid_Tag
+  - has space

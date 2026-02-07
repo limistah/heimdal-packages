@@ -1,0 +1,32 @@
+id: frontend
+name: "Frontend Developer"
+description: "Modern frontend development with Node.js and browser tools"
+type: developer
+
+packages:
+  essential:
+    - git
+    - curl
+  terminal:
+    - fzf
+    - ripgrep
+    - bat
+  editor:
+    - neovim
+  languages:
+    - node
+    - npm
+    - yarn
+
+dotfiles:
+  - source: .gitconfig
+    target: ~/.gitconfig
+  - source: .config/nvim
+    target: ~/.config/nvim
+  - source: .npmrc
+    target: ~/.npmrc
+
+hooks:
+  post_install:
+    - command: "node --version && npm --version"
+      description: "Verify Node.js and npm installation"

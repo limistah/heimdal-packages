@@ -1,0 +1,32 @@
+# Editor Dependencies
+# Defines package relationships for text editors
+
+vim:
+  required: []
+  optional: []
+
+neovim:
+  required: []
+  optional:
+    - package: ripgrep
+      reason: "Fast content search for file navigation"
+    - package: fd
+      reason: "Fast file finding for fuzzy navigation"
+    - package: git
+      reason: "Version control integration"
+
+emacs:
+  required: []
+  optional:
+    - package: ripgrep
+      reason: "Fast project-wide search"
+    - package: git
+      reason: "Magit integration for version control"
+
+helix:
+  required: []
+  optional:
+    - package: ripgrep
+      reason: "File content search integration"
+    - package: fd
+      reason: "Fast file finder integration"

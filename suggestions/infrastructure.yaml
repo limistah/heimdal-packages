@@ -1,0 +1,26 @@
+patterns:
+  # Terraform projects
+  - files:
+      - "*.tf"
+      - terraform.tfvars
+      - terraform.tfstate
+    suggests:
+      - package: terraform
+        priority: required
+        reason: "Infrastructure as Code provisioning tool"
+      - package: git
+        priority: recommended
+        reason: "Version control for infrastructure code"
+
+  # Ansible projects
+  - files:
+      - ansible.cfg
+      - playbook.yml
+      - inventory.ini
+    suggests:
+      - package: ansible
+        priority: required
+        reason: "Configuration management and automation tool"
+      - package: git
+        priority: recommended
+        reason: "Version control for automation scripts"

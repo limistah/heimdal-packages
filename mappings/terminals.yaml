@@ -1,0 +1,78 @@
+# Terminal Utilities - Cross-platform Package Mappings
+# Handles platform-specific differences in terminal tool package names
+
+tmux:
+  canonical: tmux
+  platforms:
+    apt: tmux
+    brew: tmux
+    dnf: tmux
+    pacman: tmux
+  aliases: []
+
+ripgrep:
+  canonical: ripgrep
+  platforms:
+    apt: ripgrep
+    brew: ripgrep
+    dnf: ripgrep
+    pacman: ripgrep
+  aliases:
+    - rg
+
+fd:
+  canonical: fd
+  platforms:
+    apt: fd-find
+    brew: fd
+    dnf: fd-find
+    pacman: fd
+  aliases:
+    - fd-find
+
+fzf:
+  canonical: fzf
+  platforms:
+    apt: fzf
+    brew: fzf
+    dnf: fzf
+    pacman: fzf
+  aliases:
+    - fuzzy-finder
+
+bat:
+  canonical: bat
+  platforms:
+    apt: bat
+    brew: bat
+    dnf: bat
+    pacman: bat
+  aliases:
+    - batcat
+
+jq:
+  canonical: jq
+  platforms:
+    apt: jq
+    brew: jq
+    dnf: jq
+    pacman: jq
+  aliases: []
+
+htop:
+  canonical: htop
+  platforms:
+    apt: htop
+    brew: htop
+    dnf: htop
+    pacman: htop
+  aliases: []
+
+tree:
+  canonical: tree
+  platforms:
+    apt: tree
+    brew: tree
+    dnf: tree
+    pacman: tree
+  aliases: []
