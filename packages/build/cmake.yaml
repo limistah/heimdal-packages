@@ -17,7 +17,7 @@ related:
   - ninja
 tags:
   - build
-  - c++
+  - cpp
 website: https://cmake.org/
 license: BSD-3-Clause
 source: https://github.com/Kitware/CMake
