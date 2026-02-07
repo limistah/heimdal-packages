@@ -161,7 +161,7 @@ fn scan_packages(stats: &mut DatabaseStats) -> Result<()> {
         stats
             .packages_by_category
             .entry(package.category.clone())
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(package.name.clone());
 
         // Count platform coverage

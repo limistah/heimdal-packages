@@ -181,7 +181,7 @@ fn load_packages(dir: &str) -> Result<Vec<Package>> {
     for entry in WalkDir::new(dir)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| e.path().extension().map_or(false, |ext| ext == "yaml"))
+        .filter(|e| e.path().extension().is_some_and(|ext| ext == "yaml"))
     {
         let content = fs::read_to_string(entry.path())?;
         let package: Package = serde_yaml::from_str(&content)
@@ -214,7 +214,7 @@ fn load_groups(dir: &str) -> Result<Vec<PackageGroup>> {
     for entry in WalkDir::new(dir)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| e.path().extension().map_or(false, |ext| ext == "yaml"))
+        .filter(|e| e.path().extension().is_some_and(|ext| ext == "yaml"))
     {
         let content = fs::read_to_string(entry.path())?;
         let group: PackageGroup = serde_yaml::from_str(&content)
